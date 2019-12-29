@@ -12,7 +12,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @SpringBootApplication
 @ComponentScan(basePackages= {"com.root.tasks","com.root.service.impl","com.root.configs"})
-//@MapperScan("com.root.dao")
 public class AppApplication {
 
 	public static void main(String[] args) {
