@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # springbootwebapp
 http://192.168.100.167/weixj/springbootwebapp.git
 使用强制push的方法：
