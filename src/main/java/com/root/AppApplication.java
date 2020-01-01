@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+/*
+ * 运行主方法
+ */
 
 @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 @EnableScheduling
