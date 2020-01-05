@@ -259,3 +259,5 @@ java.io.FileNotFoundException: F:\maven\mavenrepo\com\mchange\c3p0\0.9.5.2\mchan
 2020-01-05 23:17:39 -Scheduler quartzScheduler_$_NON_CLUSTERED started.
 2020-01-05 23:17:39 -Starting ProtocolHandler ["http-nio-127.0.0.1-8080"]
 2020-01-05 23:17:39 -Started AppApplication in 4.767 seconds (JVM running for 5.606)
+2020-01-05 23:20:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-05 23:20:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?

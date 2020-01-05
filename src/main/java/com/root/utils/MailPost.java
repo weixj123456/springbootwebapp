@@ -29,7 +29,7 @@ public class MailPost {
             @Override
             public PasswordAuthentication getPasswordAuthentication() {
                 //必须使用授权码，而不是密码，去qq邮箱申请    
-                return new PasswordAuthentication("1204324667@qq.com","doubleetmgsctxzvnibge");
+                return new PasswordAuthentication("12043246678@qq.com","doubleetmgsctxzvnibge");
             }
         };
 
@@ -39,10 +39,10 @@ public class MailPost {
         //2、编写邮件：Message
         Message message = new MimeMessage(session);
         //2.1、发件人
-        message.setFrom(new InternetAddress("1204324667@qq.com"));
+        message.setFrom(new InternetAddress("12043246678@qq.com"));
         //2.2、收件人 , to:收件人、cc ：抄送、bcc：暗送（密送）。
  //       message.setRecipient(RecipientType.TO, new InternetAddress("1016635671@qq.com"));
-        message.setRecipient(RecipientType.TO, new InternetAddress("1204324667@qq.com"));
+        message.setRecipient(RecipientType.TO, new InternetAddress("12043246678@qq.com"));
         //2.3、主题
         message.setSubject("测试");
         //2.4、正文
