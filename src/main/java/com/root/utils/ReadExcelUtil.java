@@ -1,5 +1,8 @@
 package com.root.utils;
 
+import lombok.extern.java.Log;
+
+/*
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,11 +27,11 @@ import cn.hutool.poi.excel.ExcelUtil;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;
 
-
+*/
 @Log
 public class ReadExcelUtil {
 
-	
+	/*
 	//读取excel文件
 	public static ExcelReader readData(String path) throws IOException {
 			File file = FileUtil.file(path);
@@ -111,6 +114,6 @@ public class ReadExcelUtil {
 	}
 
 	
-	
+	*/
 	
 }

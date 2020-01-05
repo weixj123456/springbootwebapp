@@ -1,5 +1,5 @@
 package com.root.utils;
-
+/*
 import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
-
+*/
 import com.root.entity.Person;
 
 import ch.qos.logback.core.util.FileUtil;
@@ -24,7 +24,7 @@ import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 
 public class PoiExcelUtils {
-
+/*
 	public static void exportExcel(List<?> list, String title, String sheetName, Class<?> pojoClass,String fileName,boolean isCreateHeader, HttpServletResponse response){
         ExportParams exportParams = new ExportParams(title, sheetName);
         exportParams.setCreateHeadRows(isCreateHeader);
@@ -134,5 +134,5 @@ private static void defaultExport(List<Map<String, Object>> list, String fileNam
 		
     	
 	}
-	
+	*/
 }

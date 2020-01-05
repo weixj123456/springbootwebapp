@@ -37,7 +37,7 @@ public class ExcelController {
 //        模拟从数据库获取需要导出的数据
         List<DemoExcel> personList = demoExcelRepository.findAll();
 //         导出操作
-        ExcelEasyPoiUtiles.exportExcel(personList, "测试名", "什么名字", DemoExcel.class, "测试.xls", response);
+   //     ExcelEasyPoiUtiles.exportExcel(personList, "测试名", "什么名字", DemoExcel.class, "测试.xls", response);
  
     }
  
