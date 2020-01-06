@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /*
- * 运行主方法
+ * 运行主方法0
  */
 
 @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
