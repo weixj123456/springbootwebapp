@@ -1,0 +1,114 @@
+2020-01-06 09:18:11 -Starting AppApplication on weixj-PC with PID 4100 (E:\home\WorkSpace-Oxygen\springbootwebapp\target\classes started by weixj in E:\home\WorkSpace-Oxygen\springbootwebapp)
+2020-01-06 09:18:11 -No active profile set, falling back to default profiles: default
+2020-01-06 09:18:13 -http://javax.xml.XMLConstants/property/accessExternalDTD property not supported by org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+2020-01-06 09:18:13 -http://javax.xml.XMLConstants/property/accessExternalSchema property not supported by org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+2020-01-06 09:18:14 -Initializing ProtocolHandler ["http-nio-127.0.0.1-8080"]
+2020-01-06 09:18:14 -Starting service [Tomcat]
+2020-01-06 09:18:14 -Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-06 09:18:14 -At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-06 09:18:15 -Initializing Spring embedded WebApplicationContext
+2020-01-06 09:18:15 -[THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-01-06 09:18:15 -Using default implementation for ThreadExecutor
+2020-01-06 09:18:16 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-01-06 09:18:16 -Quartz Scheduler v.2.3.1 created.
+2020-01-06 09:18:16 -RAMJobStore initialized.
+2020-01-06 09:18:16 -Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-01-06 09:18:16 -Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-01-06 09:18:16 -Quartz scheduler version: 2.3.1
+2020-01-06 09:18:16 -JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1b689275
+2020-01-06 09:18:16 -Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-01-06 09:18:16 -Starting ProtocolHandler ["http-nio-127.0.0.1-8080"]
+2020-01-06 09:18:16 -Started AppApplication in 5.028 seconds (JVM running for 5.943)
+2020-01-06 09:20:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:20:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:25:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:25:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:30:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:30:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:35:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:35:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:40:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:40:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:45:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:45:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:50:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:50:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 09:55:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 09:55:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:00:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 10:00:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:05:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 10:05:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:10:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 10:10:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:15:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 10:15:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:20:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 10:20:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:21:52 -Starting AppApplication on weixj-PC with PID 6292 (E:\home\WorkSpace-Oxygen\springbootwebapp\target\classes started by weixj in E:\home\WorkSpace-Oxygen\springbootwebapp)
+2020-01-06 10:21:52 -No active profile set, falling back to default profiles: default
+2020-01-06 10:21:53 -http://javax.xml.XMLConstants/property/accessExternalDTD property not supported by org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+2020-01-06 10:21:53 -http://javax.xml.XMLConstants/property/accessExternalSchema property not supported by org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+2020-01-06 10:21:55 -Initializing ProtocolHandler ["http-nio-127.0.0.1-8080"]
+2020-01-06 10:21:55 -Starting service [Tomcat]
+2020-01-06 10:21:55 -Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-06 10:21:55 -At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-06 10:21:55 -Initializing Spring embedded WebApplicationContext
+2020-01-06 10:21:55 -[THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-01-06 10:21:56 -Using default implementation for ThreadExecutor
+2020-01-06 10:21:56 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-01-06 10:21:56 -Quartz Scheduler v.2.3.1 created.
+2020-01-06 10:21:56 -RAMJobStore initialized.
+2020-01-06 10:21:56 -Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-01-06 10:21:56 -Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-01-06 10:21:56 -Quartz scheduler version: 2.3.1
+2020-01-06 10:21:56 -JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4f9c54c8
+2020-01-06 10:21:56 -Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-01-06 10:21:56 -Starting ProtocolHandler ["http-nio-127.0.0.1-8080"]
+2020-01-06 10:21:56 -Started AppApplication in 4.785 seconds (JVM running for 5.729)
+2020-01-06 10:22:02 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-06 10:25:02 -执行定时任务queryPayStatus---start  cron = "0 0/2 * * * ?
+2020-01-06 10:25:02 -执行定时任务queryPayStatus---end   cron = "0 0/2 * * * ?
+2020-01-06 10:51:35 -Starting AppApplication on weixj-PC with PID 4992 (E:\home\WorkSpace-Oxygen\springbootwebapp\target\classes started by weixj in E:\home\WorkSpace-Oxygen\springbootwebapp)
+2020-01-06 10:51:35 -No active profile set, falling back to default profiles: default
+2020-01-06 10:51:36 -http://javax.xml.XMLConstants/property/accessExternalDTD property not supported by org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+2020-01-06 10:51:36 -http://javax.xml.XMLConstants/property/accessExternalSchema property not supported by org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+2020-01-06 10:51:38 -Initializing ProtocolHandler ["http-nio-127.0.0.1-8080"]
+2020-01-06 10:51:38 -Starting service [Tomcat]
+2020-01-06 10:51:38 -Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-06 10:51:38 -At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-01-06 10:51:38 -Initializing Spring embedded WebApplicationContext
+2020-01-06 10:51:38 -[THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-01-06 10:51:39 -Using default implementation for ThreadExecutor
+2020-01-06 10:51:39 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-01-06 10:51:39 -Quartz Scheduler v.2.3.1 created.
+2020-01-06 10:51:39 -RAMJobStore initialized.
+2020-01-06 10:51:39 -Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-01-06 10:51:39 -Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-01-06 10:51:39 -Quartz scheduler version: 2.3.1
+2020-01-06 10:51:39 -JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4c2bfa4
+2020-01-06 10:51:39 -Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-01-06 10:51:39 -Starting ProtocolHandler ["http-nio-127.0.0.1-8080"]
+2020-01-06 10:51:39 -Started AppApplication in 4.822 seconds (JVM running for 5.761)
+2020-01-06 10:51:51 -Initializing Spring DispatcherServlet 'dispatcherServlet'
