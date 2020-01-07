@@ -12,7 +12,6 @@ import javax.mail.Transport;
 import javax.mail.Message.RecipientType;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
 import sun.misc.BASE64Decoder;
 
 

@@ -24,7 +24,8 @@ import java.util.Map;
 import java.util.Random;
 import javax.crypto.Cipher;
 import org.apache.log4j.Logger;
-
+import java.util.Base64.Encoder;
+import java.util.Base64.Decoder;
 
 public class JiaMi {
 	static Logger	log	= Logger.getLogger(JiaMi.class);
@@ -455,7 +456,12 @@ public static String encode(byte[] bytes) throws Exception {
     	keyMap.put(PRIVATE_KEY, privateKey);
     	return "1";
     }
+  //===============================
+   //==============================
+   
     
+//===============================
+//===============================
   
     
      /**

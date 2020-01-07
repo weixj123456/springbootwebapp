@@ -484,7 +484,9 @@
                     <target>1.8</target>
                     <encoding>utf-8</encoding>
                     <compilerArguments>
-			            <extdirs>src/main/resources/lib</extdirs>
+                         <verbose/>
+			            <extdirs>src/main/resources/lib</extdirs>		    
+                        <bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>
 			        </compilerArguments>
                 </configuration>
             </plugin>
