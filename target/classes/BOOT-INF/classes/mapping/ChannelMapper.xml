@@ -1,259 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.temptation.dao.ChannelMapper">
-  <resultMap id="BaseResultMap" type="cn.temptation.domain.Channel">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="channelid" jdbcType="VARCHAR" property="channelid" />
-    <result column="manager" jdbcType="VARCHAR" property="manager" />
-    <result column="projectleader" jdbcType="VARCHAR" property="projectleader" />
-    <result column="hexinnemdianID" jdbcType="VARCHAR" property="hexinnemdianid" />
-    <result column="productqixian" jdbcType="INTEGER" property="productqixian" />
-    <result column="Description" jdbcType="VARCHAR" property="description" />
-    <result column="IPAddress" jdbcType="VARCHAR" property="ipaddress" />
-    <result column="PortNumber" jdbcType="SMALLINT" property="portnumber" />
-    <result column="serviceip" jdbcType="VARCHAR" property="serviceip" />
-    <result column="filepath" jdbcType="VARCHAR" property="filepath" />
-    <result column="docname" jdbcType="VARCHAR" property="docname" />
-    <result column="IsEnable" jdbcType="BIT" property="isenable" />
-    <result column="LastTimestamp" jdbcType="VARCHAR" property="lasttimestamp" />
-    <result column="cooperationtype" jdbcType="VARCHAR" property="cooperationtype" />
-    <result column="Status" jdbcType="SMALLINT" property="status" />
-    <result column="IsDelete" jdbcType="BIT" property="isdelete" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, Name, channelid, manager, projectleader, hexinnemdianID, productqixian, Description, 
-    IPAddress, PortNumber, serviceip, filepath, docname, IsEnable, LastTimestamp, cooperationtype, 
-    Status, IsDelete
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from channel
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from channel
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.temptation.domain.Channel">
-    insert into channel (id, Name, channelid, 
-      manager, projectleader, hexinnemdianID, 
-      productqixian, Description, IPAddress, 
-      PortNumber, serviceip, filepath, 
-      docname, IsEnable, LastTimestamp, 
-      cooperationtype, Status, IsDelete
-      )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{channelid,jdbcType=VARCHAR}, 
-      #{manager,jdbcType=VARCHAR}, #{projectleader,jdbcType=VARCHAR}, #{hexinnemdianid,jdbcType=VARCHAR}, 
-      #{productqixian,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{ipaddress,jdbcType=VARCHAR}, 
-      #{portnumber,jdbcType=SMALLINT}, #{serviceip,jdbcType=VARCHAR}, #{filepath,jdbcType=VARCHAR}, 
-      #{docname,jdbcType=VARCHAR}, #{isenable,jdbcType=BIT}, #{lasttimestamp,jdbcType=VARCHAR}, 
-      #{cooperationtype,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="cn.temptation.domain.Channel">
-    insert into channel
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="name != null">
-        Name,
-      </if>
-      <if test="channelid != null">
-        channelid,
-      </if>
-      <if test="manager != null">
-        manager,
-      </if>
-      <if test="projectleader != null">
-        projectleader,
-      </if>
-      <if test="hexinnemdianid != null">
-        hexinnemdianID,
-      </if>
-      <if test="productqixian != null">
-        productqixian,
-      </if>
-      <if test="description != null">
-        Description,
-      </if>
-      <if test="ipaddress != null">
-        IPAddress,
-      </if>
-      <if test="portnumber != null">
-        PortNumber,
-      </if>
-      <if test="serviceip != null">
-        serviceip,
-      </if>
-      <if test="filepath != null">
-        filepath,
-      </if>
-      <if test="docname != null">
-        docname,
-      </if>
-      <if test="isenable != null">
-        IsEnable,
-      </if>
-      <if test="lasttimestamp != null">
-        LastTimestamp,
-      </if>
-      <if test="cooperationtype != null">
-        cooperationtype,
-      </if>
-      <if test="status != null">
-        Status,
-      </if>
-      <if test="isdelete != null">
-        IsDelete,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="channelid != null">
-        #{channelid,jdbcType=VARCHAR},
-      </if>
-      <if test="manager != null">
-        #{manager,jdbcType=VARCHAR},
-      </if>
-      <if test="projectleader != null">
-        #{projectleader,jdbcType=VARCHAR},
-      </if>
-      <if test="hexinnemdianid != null">
-        #{hexinnemdianid,jdbcType=VARCHAR},
-      </if>
-      <if test="productqixian != null">
-        #{productqixian,jdbcType=INTEGER},
-      </if>
-      <if test="description != null">
-        #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="ipaddress != null">
-        #{ipaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="portnumber != null">
-        #{portnumber,jdbcType=SMALLINT},
-      </if>
-      <if test="serviceip != null">
-        #{serviceip,jdbcType=VARCHAR},
-      </if>
-      <if test="filepath != null">
-        #{filepath,jdbcType=VARCHAR},
-      </if>
-      <if test="docname != null">
-        #{docname,jdbcType=VARCHAR},
-      </if>
-      <if test="isenable != null">
-        #{isenable,jdbcType=BIT},
-      </if>
-      <if test="lasttimestamp != null">
-        #{lasttimestamp,jdbcType=VARCHAR},
-      </if>
-      <if test="cooperationtype != null">
-        #{cooperationtype,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=SMALLINT},
-      </if>
-      <if test="isdelete != null">
-        #{isdelete,jdbcType=BIT},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.temptation.domain.Channel">
-    update channel
-    <set>
-      <if test="name != null">
-        Name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="channelid != null">
-        channelid = #{channelid,jdbcType=VARCHAR},
-      </if>
-      <if test="manager != null">
-        manager = #{manager,jdbcType=VARCHAR},
-      </if>
-      <if test="projectleader != null">
-        projectleader = #{projectleader,jdbcType=VARCHAR},
-      </if>
-      <if test="hexinnemdianid != null">
-        hexinnemdianID = #{hexinnemdianid,jdbcType=VARCHAR},
-      </if>
-      <if test="productqixian != null">
-        productqixian = #{productqixian,jdbcType=INTEGER},
-      </if>
-      <if test="description != null">
-        Description = #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="ipaddress != null">
-        IPAddress = #{ipaddress,jdbcType=VARCHAR},
-      </if>
-      <if test="portnumber != null">
-        PortNumber = #{portnumber,jdbcType=SMALLINT},
-      </if>
-      <if test="serviceip != null">
-        serviceip = #{serviceip,jdbcType=VARCHAR},
-      </if>
-      <if test="filepath != null">
-        filepath = #{filepath,jdbcType=VARCHAR},
-      </if>
-      <if test="docname != null">
-        docname = #{docname,jdbcType=VARCHAR},
-      </if>
-      <if test="isenable != null">
-        IsEnable = #{isenable,jdbcType=BIT},
-      </if>
-      <if test="lasttimestamp != null">
-        LastTimestamp = #{lasttimestamp,jdbcType=VARCHAR},
-      </if>
-      <if test="cooperationtype != null">
-        cooperationtype = #{cooperationtype,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        Status = #{status,jdbcType=SMALLINT},
-      </if>
-      <if test="isdelete != null">
-        IsDelete = #{isdelete,jdbcType=BIT},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.temptation.domain.Channel">
-    update channel
-    set Name = #{name,jdbcType=VARCHAR},
-      channelid = #{channelid,jdbcType=VARCHAR},
-      manager = #{manager,jdbcType=VARCHAR},
-      projectleader = #{projectleader,jdbcType=VARCHAR},
-      hexinnemdianID = #{hexinnemdianid,jdbcType=VARCHAR},
-      productqixian = #{productqixian,jdbcType=INTEGER},
-      Description = #{description,jdbcType=VARCHAR},
-      IPAddress = #{ipaddress,jdbcType=VARCHAR},
-      PortNumber = #{portnumber,jdbcType=SMALLINT},
-      serviceip = #{serviceip,jdbcType=VARCHAR},
-      filepath = #{filepath,jdbcType=VARCHAR},
-      docname = #{docname,jdbcType=VARCHAR},
-      IsEnable = #{isenable,jdbcType=BIT},
-      LastTimestamp = #{lasttimestamp,jdbcType=VARCHAR},
-      cooperationtype = #{cooperationtype,jdbcType=VARCHAR},
-      Status = #{status,jdbcType=SMALLINT},
-      IsDelete = #{isdelete,jdbcType=BIT}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  
-  <select id="selectByChannelid" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from channel
-    where channelid = #{channelid,jdbcType=VARCHAR}
-  </select>
-  
-  <select id="getAll"  resultType="cn.temptation.domain.Channel">
-    select * from channel  where 1=1
-  </select>
+	<resultMap id="BaseResultMap" type="cn.temptation.domain.Channel">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="channelid" jdbcType="VARCHAR" property="channelid" />
+		<result column="manager" jdbcType="VARCHAR" property="manager" />
+		<result column="projectleader" jdbcType="VARCHAR" property="projectleader" />
+		<result column="hexinnemdianID" jdbcType="VARCHAR" property="hexinnemdianid" />
+		<result column="productqixian" jdbcType="INTEGER" property="productqixian" />
+		<result column="Description" jdbcType="VARCHAR" property="description" />
+		<result column="IPAddress" jdbcType="VARCHAR" property="ipaddress" />
+		<result column="PortNumber" jdbcType="SMALLINT" property="portnumber" />
+		<result column="serviceip" jdbcType="VARCHAR" property="serviceip" />
+		<result column="filepath" jdbcType="VARCHAR" property="filepath" />
+		<result column="docname" jdbcType="VARCHAR" property="docname" />
+		<result column="IsEnable" jdbcType="BIT" property="isenable" />
+		<result column="LastTimestamp" jdbcType="VARCHAR" property="lasttimestamp" />
+		<result column="cooperationtype" jdbcType="VARCHAR" property="cooperationtype" />
+		<result column="Status" jdbcType="SMALLINT" property="status" />
+		<result column="IsDelete" jdbcType="BIT" property="isdelete" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, Name, channelid, manager, projectleader, hexinnemdianID,
+		productqixian, Description,
+		IPAddress, PortNumber, serviceip, filepath, docname, IsEnable, LastTimestamp,
+		cooperationtype,
+		Status, IsDelete
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from channel
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from channel
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="cn.temptation.domain.Channel">
+		insert into channel (id, Name, channelid,
+		manager, projectleader, hexinnemdianID,
+		productqixian, Description, IPAddress,
+		PortNumber, serviceip, filepath,
+		docname, IsEnable, LastTimestamp,
+		cooperationtype, Status, IsDelete
+		)
+		values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+		#{channelid,jdbcType=VARCHAR},
+		#{manager,jdbcType=VARCHAR}, #{projectleader,jdbcType=VARCHAR},
+		#{hexinnemdianid,jdbcType=VARCHAR},
+		#{productqixian,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{ipaddress,jdbcType=VARCHAR},
+		#{portnumber,jdbcType=SMALLINT}, #{serviceip,jdbcType=VARCHAR},
+		#{filepath,jdbcType=VARCHAR},
+		#{docname,jdbcType=VARCHAR}, #{isenable,jdbcType=BIT}, #{lasttimestamp,jdbcType=VARCHAR},
+		#{cooperationtype,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT},
+		#{isdelete,jdbcType=BIT}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="cn.temptation.domain.Channel">
+		insert into channel
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="name != null">
+				Name,
+			</if>
+			<if test="channelid != null">
+				channelid,
+			</if>
+			<if test="manager != null">
+				manager,
+			</if>
+			<if test="projectleader != null">
+				projectleader,
+			</if>
+			<if test="hexinnemdianid != null">
+				hexinnemdianID,
+			</if>
+			<if test="productqixian != null">
+				productqixian,
+			</if>
+			<if test="description != null">
+				Description,
+			</if>
+			<if test="ipaddress != null">
+				IPAddress,
+			</if>
+			<if test="portnumber != null">
+				PortNumber,
+			</if>
+			<if test="serviceip != null">
+				serviceip,
+			</if>
+			<if test="filepath != null">
+				filepath,
+			</if>
+			<if test="docname != null">
+				docname,
+			</if>
+			<if test="isenable != null">
+				IsEnable,
+			</if>
+			<if test="lasttimestamp != null">
+				LastTimestamp,
+			</if>
+			<if test="cooperationtype != null">
+				cooperationtype,
+			</if>
+			<if test="status != null">
+				Status,
+			</if>
+			<if test="isdelete != null">
+				IsDelete,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="channelid != null">
+				#{channelid,jdbcType=VARCHAR},
+			</if>
+			<if test="manager != null">
+				#{manager,jdbcType=VARCHAR},
+			</if>
+			<if test="projectleader != null">
+				#{projectleader,jdbcType=VARCHAR},
+			</if>
+			<if test="hexinnemdianid != null">
+				#{hexinnemdianid,jdbcType=VARCHAR},
+			</if>
+			<if test="productqixian != null">
+				#{productqixian,jdbcType=INTEGER},
+			</if>
+			<if test="description != null">
+				#{description,jdbcType=VARCHAR},
+			</if>
+			<if test="ipaddress != null">
+				#{ipaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="portnumber != null">
+				#{portnumber,jdbcType=SMALLINT},
+			</if>
+			<if test="serviceip != null">
+				#{serviceip,jdbcType=VARCHAR},
+			</if>
+			<if test="filepath != null">
+				#{filepath,jdbcType=VARCHAR},
+			</if>
+			<if test="docname != null">
+				#{docname,jdbcType=VARCHAR},
+			</if>
+			<if test="isenable != null">
+				#{isenable,jdbcType=BIT},
+			</if>
+			<if test="lasttimestamp != null">
+				#{lasttimestamp,jdbcType=VARCHAR},
+			</if>
+			<if test="cooperationtype != null">
+				#{cooperationtype,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=SMALLINT},
+			</if>
+			<if test="isdelete != null">
+				#{isdelete,jdbcType=BIT},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.temptation.domain.Channel">
+		update channel
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="channelid != null">
+				channelid = #{channelid,jdbcType=VARCHAR},
+			</if>
+			<if test="manager != null">
+				manager = #{manager,jdbcType=VARCHAR},
+			</if>
+			<if test="projectleader != null">
+				projectleader = #{projectleader,jdbcType=VARCHAR},
+			</if>
+			<if test="hexinnemdianid != null">
+				hexinnemdianID = #{hexinnemdianid,jdbcType=VARCHAR},
+			</if>
+			<if test="productqixian != null">
+				productqixian = #{productqixian,jdbcType=INTEGER},
+			</if>
+			<if test="description != null">
+				Description = #{description,jdbcType=VARCHAR},
+			</if>
+			<if test="ipaddress != null">
+				IPAddress = #{ipaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="portnumber != null">
+				PortNumber = #{portnumber,jdbcType=SMALLINT},
+			</if>
+			<if test="serviceip != null">
+				serviceip = #{serviceip,jdbcType=VARCHAR},
+			</if>
+			<if test="filepath != null">
+				filepath = #{filepath,jdbcType=VARCHAR},
+			</if>
+			<if test="docname != null">
+				docname = #{docname,jdbcType=VARCHAR},
+			</if>
+			<if test="isenable != null">
+				IsEnable = #{isenable,jdbcType=BIT},
+			</if>
+			<if test="lasttimestamp != null">
+				LastTimestamp = #{lasttimestamp,jdbcType=VARCHAR},
+			</if>
+			<if test="cooperationtype != null">
+				cooperationtype = #{cooperationtype,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				Status = #{status,jdbcType=SMALLINT},
+			</if>
+			<if test="isdelete != null">
+				IsDelete = #{isdelete,jdbcType=BIT},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.temptation.domain.Channel">
+		update channel
+		set Name = #{name,jdbcType=VARCHAR},
+		channelid = #{channelid,jdbcType=VARCHAR},
+		manager = #{manager,jdbcType=VARCHAR},
+		projectleader = #{projectleader,jdbcType=VARCHAR},
+		hexinnemdianID = #{hexinnemdianid,jdbcType=VARCHAR},
+		productqixian = #{productqixian,jdbcType=INTEGER},
+		Description = #{description,jdbcType=VARCHAR},
+		IPAddress = #{ipaddress,jdbcType=VARCHAR},
+		PortNumber = #{portnumber,jdbcType=SMALLINT},
+		serviceip = #{serviceip,jdbcType=VARCHAR},
+		filepath = #{filepath,jdbcType=VARCHAR},
+		docname = #{docname,jdbcType=VARCHAR},
+		IsEnable = #{isenable,jdbcType=BIT},
+		LastTimestamp = #{lasttimestamp,jdbcType=VARCHAR},
+		cooperationtype = #{cooperationtype,jdbcType=VARCHAR},
+		Status = #{status,jdbcType=SMALLINT},
+		IsDelete = #{isdelete,jdbcType=BIT}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="selectByChannelid" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from channel
+		where channelid = #{channelid,jdbcType=VARCHAR}
+	</select>
+
+	<select id="getAll" resultType="cn.temptation.domain.Channel">
+		select * from channel where 1=1
+	</select>
 </mapper>

@@ -1,165 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.temptation.dao.IdcardMapper">
-  <resultMap id="BaseResultMap" type="cn.temptation.domain.Idcard">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="idno" jdbcType="VARCHAR" property="idno" />
-    <result column="bankno" jdbcType="VARCHAR" property="bankno" />
-    <result column="telphone" jdbcType="VARCHAR" property="telphone" />
-    <result column="descption" jdbcType="VARCHAR" property="descption" />
-    <result column="num" jdbcType="INTEGER" property="num" />
-    <result column="loanno" jdbcType="VARCHAR" property="loanno" />
-    <result column="contno" jdbcType="VARCHAR" property="contno" />
-    <result column="batchno" jdbcType="VARCHAR" property="batchno" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, username, idno, bankno, telphone, descption, num, loanno, contno, batchno
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from idcard
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from idcard
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.temptation.domain.Idcard">
-    insert into idcard (id, username, idno, 
-      bankno, telphone, descption, 
-      num, loanno, contno, 
-      batchno)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{idno,jdbcType=VARCHAR}, 
-      #{bankno,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, #{descption,jdbcType=VARCHAR}, 
-      #{num,jdbcType=INTEGER}, #{loanno,jdbcType=VARCHAR}, #{contno,jdbcType=VARCHAR}, 
-      #{batchno,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.temptation.domain.Idcard">
-    insert into idcard
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="idno != null">
-        idno,
-      </if>
-      <if test="bankno != null">
-        bankno,
-      </if>
-      <if test="telphone != null">
-        telphone,
-      </if>
-      <if test="descption != null">
-        descption,
-      </if>
-      <if test="num != null">
-        num,
-      </if>
-      <if test="loanno != null">
-        loanno,
-      </if>
-      <if test="contno != null">
-        contno,
-      </if>
-      <if test="batchno != null">
-        batchno,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="idno != null">
-        #{idno,jdbcType=VARCHAR},
-      </if>
-      <if test="bankno != null">
-        #{bankno,jdbcType=VARCHAR},
-      </if>
-      <if test="telphone != null">
-        #{telphone,jdbcType=VARCHAR},
-      </if>
-      <if test="descption != null">
-        #{descption,jdbcType=VARCHAR},
-      </if>
-      <if test="num != null">
-        #{num,jdbcType=INTEGER},
-      </if>
-      <if test="loanno != null">
-        #{loanno,jdbcType=VARCHAR},
-      </if>
-      <if test="contno != null">
-        #{contno,jdbcType=VARCHAR},
-      </if>
-      <if test="batchno != null">
-        #{batchno,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.temptation.domain.Idcard">
-    update idcard
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="idno != null">
-        idno = #{idno,jdbcType=VARCHAR},
-      </if>
-      <if test="bankno != null">
-        bankno = #{bankno,jdbcType=VARCHAR},
-      </if>
-      <if test="telphone != null">
-        telphone = #{telphone,jdbcType=VARCHAR},
-      </if>
-      <if test="descption != null">
-        descption = #{descption,jdbcType=VARCHAR},
-      </if>
-      <if test="num != null">
-        num = #{num,jdbcType=INTEGER},
-      </if>
-      <if test="loanno != null">
-        loanno = #{loanno,jdbcType=VARCHAR},
-      </if>
-      <if test="contno != null">
-        contno = #{contno,jdbcType=VARCHAR},
-      </if>
-      <if test="batchno != null">
-        batchno = #{batchno,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.temptation.domain.Idcard">
-    update idcard
-    set username = #{username,jdbcType=VARCHAR},
-      idno = #{idno,jdbcType=VARCHAR},
-      bankno = #{bankno,jdbcType=VARCHAR},
-      telphone = #{telphone,jdbcType=VARCHAR},
-      descption = #{descption,jdbcType=VARCHAR},
-      num = #{num,jdbcType=INTEGER},
-      loanno = #{loanno,jdbcType=VARCHAR},
-      contno = #{contno,jdbcType=VARCHAR},
-      batchno = #{batchno,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  
-   
-  <select id="getAll"  resultType="cn.temptation.domain.Idcard">
-    select * from idcard  where 1=1
-  </select>
-  
-  
-  <select id="selectByidno" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from idcard
-    where idno = #{idno,jdbcType=VARCHAR}
-  </select>
+	<resultMap id="BaseResultMap" type="cn.temptation.domain.Idcard">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="username" jdbcType="VARCHAR" property="username" />
+		<result column="idno" jdbcType="VARCHAR" property="idno" />
+		<result column="bankno" jdbcType="VARCHAR" property="bankno" />
+		<result column="telphone" jdbcType="VARCHAR" property="telphone" />
+		<result column="descption" jdbcType="VARCHAR" property="descption" />
+		<result column="num" jdbcType="INTEGER" property="num" />
+		<result column="loanno" jdbcType="VARCHAR" property="loanno" />
+		<result column="contno" jdbcType="VARCHAR" property="contno" />
+		<result column="batchno" jdbcType="VARCHAR" property="batchno" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, username, idno, bankno, telphone, descption, num, loanno, contno,
+		batchno
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from idcard
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from idcard
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="cn.temptation.domain.Idcard">
+		insert into idcard (id, username, idno,
+		bankno, telphone, descption,
+		num, loanno, contno,
+		batchno)
+		values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
+		#{idno,jdbcType=VARCHAR},
+		#{bankno,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, #{descption,jdbcType=VARCHAR},
+		#{num,jdbcType=INTEGER}, #{loanno,jdbcType=VARCHAR},
+		#{contno,jdbcType=VARCHAR},
+		#{batchno,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="cn.temptation.domain.Idcard">
+		insert into idcard
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="username != null">
+				username,
+			</if>
+			<if test="idno != null">
+				idno,
+			</if>
+			<if test="bankno != null">
+				bankno,
+			</if>
+			<if test="telphone != null">
+				telphone,
+			</if>
+			<if test="descption != null">
+				descption,
+			</if>
+			<if test="num != null">
+				num,
+			</if>
+			<if test="loanno != null">
+				loanno,
+			</if>
+			<if test="contno != null">
+				contno,
+			</if>
+			<if test="batchno != null">
+				batchno,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="username != null">
+				#{username,jdbcType=VARCHAR},
+			</if>
+			<if test="idno != null">
+				#{idno,jdbcType=VARCHAR},
+			</if>
+			<if test="bankno != null">
+				#{bankno,jdbcType=VARCHAR},
+			</if>
+			<if test="telphone != null">
+				#{telphone,jdbcType=VARCHAR},
+			</if>
+			<if test="descption != null">
+				#{descption,jdbcType=VARCHAR},
+			</if>
+			<if test="num != null">
+				#{num,jdbcType=INTEGER},
+			</if>
+			<if test="loanno != null">
+				#{loanno,jdbcType=VARCHAR},
+			</if>
+			<if test="contno != null">
+				#{contno,jdbcType=VARCHAR},
+			</if>
+			<if test="batchno != null">
+				#{batchno,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.temptation.domain.Idcard">
+		update idcard
+		<set>
+			<if test="username != null">
+				username = #{username,jdbcType=VARCHAR},
+			</if>
+			<if test="idno != null">
+				idno = #{idno,jdbcType=VARCHAR},
+			</if>
+			<if test="bankno != null">
+				bankno = #{bankno,jdbcType=VARCHAR},
+			</if>
+			<if test="telphone != null">
+				telphone = #{telphone,jdbcType=VARCHAR},
+			</if>
+			<if test="descption != null">
+				descption = #{descption,jdbcType=VARCHAR},
+			</if>
+			<if test="num != null">
+				num = #{num,jdbcType=INTEGER},
+			</if>
+			<if test="loanno != null">
+				loanno = #{loanno,jdbcType=VARCHAR},
+			</if>
+			<if test="contno != null">
+				contno = #{contno,jdbcType=VARCHAR},
+			</if>
+			<if test="batchno != null">
+				batchno = #{batchno,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.temptation.domain.Idcard">
+		update idcard
+		set username = #{username,jdbcType=VARCHAR},
+		idno = #{idno,jdbcType=VARCHAR},
+		bankno = #{bankno,jdbcType=VARCHAR},
+		telphone = #{telphone,jdbcType=VARCHAR},
+		descption = #{descption,jdbcType=VARCHAR},
+		num = #{num,jdbcType=INTEGER},
+		loanno = #{loanno,jdbcType=VARCHAR},
+		contno = #{contno,jdbcType=VARCHAR},
+		batchno = #{batchno,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+
+	<select id="getAll" resultType="cn.temptation.domain.Idcard">
+		select * from idcard where 1=1
+	</select>
+
+
+	<select id="selectByidno" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from idcard
+		where idno = #{idno,jdbcType=VARCHAR}
+	</select>
 </mapper>
