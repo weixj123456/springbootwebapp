@@ -31,7 +31,7 @@
 
 
 	<dependencies>
-		<!-- ============================================== -->
+		<!-- =======================1======================= -->
 		<dependency><!-- 1.2.4 -->
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
