@@ -534,6 +534,12 @@
                 </includes>
                 <filtering>false</filtering>
             </resource>
+             <!-- ===============新添加============ -->
+                <resource>
+	                <directory>src/main/webapp</directory>
+	                <targetPath>META-INF/resources</targetPath>
+                	<filtering>false</filtering>
+            </resource>
             <!-- ===============新添加============ -->
 		</resources>
 	</build>
