@@ -154,3 +154,81 @@ public class ToBookAddServlet extends HttpServlet {
 	}
 	%>
 	</select>       
+	
+//======================================
+//======================================
+//======================================
+                                                                                          jsp页面弹出框，ajax做数据回显
+在页面中做“编辑”功能时，往往需要在当前页面出现一个弹出框，页面变成灰色，在弹出框中回显原本的数据，修改后保存至数据库中。具体做法如下：
+
+1.在当前jsp页面书写form表单
+form表单的写法、样式等都跟普通的一样，唯独不同的是在form标签中加入display:none属性。示例：
+
+<a onclick="showLayer(${item.proId})">编辑</a>
+<div id="layerBg"></div>
+<form id="layer" action="" method="post">
+	<h3 align="center">项目信息修改</h3><br>
+	<input style="display: none" type="text" id="proId" name="proId" />
+	<label>项目名称： </label><input type="text" id="proName" name="proName" />
+	<input type="submit" value="确认" >
+	<input type="button" value="取消" onclick="hideLayer()">
+</form>
+
+2.css代码
+<style type="text/css">
+	#layer {
+   		display: none;
+  		position: absolute;
+  		z-index:11;
+	}
+	#layerBg {
+		display: none;
+		position: absolute;
+		z-index:10;
+		background:#DCDBDC;
+		width: 1370px;
+		height: 920px;
+		-moz-opacity: 0.8;
+		opacity:.80;
+		left:0;
+		top:0;
+	}
+</style>
+其中，
+1.<a onclick="showLayer(${item.proId})">编辑</a>里调用方法showLayer(id)的参数视情况而定；这里参数主要用于在数据库查询对应的数据，用来做页面回显。
+2.proId需要用于后续在数据库中查询数据，但在页面上不需要显示，所以也设置为display:none
+
+3.showLayer(id)方法
+<script type="text/javascript">
+	function showLayer(id) {
+		$.ajax({
+			type : "post",
+			dataType : "json",
+			url : "${pageContext.request.contextPath }/project/showProjectByProId.action",
+			data : {
+				"proId" : id
+			},
+			success : function(data) {
+				var arr = data.project;
+				$('#proId').val(arr.proId);
+				$('#proName').val(arr.proName);
+			},
+			error : function(data) {
+				alert("系统错误");
+			}
+		});  
+		$('#layer').css({"display": "block"});
+		return false;
+	}
+</script>
+
+4.hideLayer()方法
+<script type="text/javascript">
+	function hideLayer() {
+		$('#layer').css({"display": "none"});
+		window.location.reload();
+	}
+</script>
+————————————————
+版权声明：本文为CSDN博主「肉团子啊啊啊」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_42384915/article/details/88660114
