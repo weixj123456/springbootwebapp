@@ -11,3 +11,146 @@ JSP select下拉标签 简单使用
 			<option value="d" <c:if test="${educa=='d'}"></c:if>>专科</option>
 	</select>
 </li> 
+
+
+//=========================================
+<!--
+JSP 下拉选择框和输入框的问题
+<tr>
+                <td align="right" class="left">活动类型：</td>
+                <td align="left">
+                    <select id="type" name="type">
+                        <option value="">==请选择==</option>
+                        <option value="1" <c:if test="${pBanner.type == 1}">selected</c:if> >打开界面activity</option>
+                        <option value="2" <c:if test="${pBanner.type == 2}">selected</c:if> >打开优惠网页</option>
+                        <option value="3" <c:if test="${pBanner.type == 3}">selected</c:if> >优惠产品</option>
+                        <option value="4" <c:if test="${pBanner.type == 4}">selected</c:if> >点击分享</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" height="25" align="right" class="left">跳转地址: </td>
+                <td height="25" align="left" width="70%">
+                    <input id="baner_adress" name="baner_adress"  value="${pBanner.baner_adress}" />
+                </td>
+            </tr>
+       -->     
+       
+       
+       jsp页面中的下拉列表
+在WEB开发过程中，我们经常遇到信息修改的功能需求。这时我们给用户提供一个JSP页面，展示出当前的信息并
+<table>
+    <tr>
+        <td align="right" class="left">活动类型：</td>
+        <td align="left">
+            <select id="type" name="type" onchange="setTdHtml(this.value)">
+                <option value="">==请选择==</option>
+                <option value="1" <c:if test="${pBanner.type == 1}">selected</c:if> >打开界面activity</option>
+                <option value="2" <c:if test="${pBanner.type == 2}">selected</c:if> >打开优惠网页</option>
+                <option value="3" <c:if test="${pBanner.type == 3}">selected</c:if> >优惠产品</option>
+                <option value="4" <c:if test="${pBanner.type == 4}">selected</c:if> >点击分享</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" height="25" align="right" class="left">跳转地址: </td>
+        <td height="25" align="left" width="70%" id="tdUrl">
+            <input id="baner_adress" name="baner_adress" value="${pBanner.baner_adress}" />
+        </td>
+    </tr>
+</table>
+<script>
+    function setTdHtml(v) {
+        var td = document.getElementById('tdUrl');
+        switch (v) {
+            case '1': td.innerHTML = 'xxxxxxx'; break;
+            case '2': td.innerHTML = 'xxxxxxx'; break;
+            case '3': td.innerHTML = 'xxxxxxx'; break;
+                //...more
+        }
+    }
+</script>
+ //===========================================
+ //===========================================
+ JSP页面select下拉框数据回显
+ MVC框架下JSP页面select下拉框数据回显：
+
+<li><label>经营商家<b>*</b></label>  
+	<div class="vocation">
+		<select class="select1" name="p_store" >
+			<option value="淘宝"<%if("淘宝".equals(products.getP_store())){%> selected<%} %>>淘宝</option>
+			<option value="天猫"<%if("天猫".equals(products.getP_store())){%> selected<%} %>>天猫</option>
+			<option value="其他"<%if("其他".equals(products.getP_store())){%> selected<%} %>>其他</option>
+		</select>
+	</div>
+</li>
+————————————————
+版权声明：本文为CSDN博主「wgllu」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_23190729/article/details/76774801       
+ //===========================================
+ jsp页面数据回显（select下拉选择框）
+ jsp页面数据回显（select下拉选择框+c标签）
+ <select name="clazz">
+		<c:forEach items="${clazzList }" var="clazz">
+			<option value ="${clazz.bid }" 		
+				<c:if test="${clazz.bid==tbStudent.bid }">
+					selected="selected"
+				</c:if>		
+			>${clazz.bname }</option>
+		</c:forEach>		
+</select>       
+//==============================
+jsp页面数据回显（checkbox）
+jsp页面数据回显（checkbox+c标签）
+<c:forEach items="${courseList }" var="c">
+		<input type="checkbox" name="course" id="" value="${c.cid }"	
+			<c:forEach items="${tbStudent.courses }" var="cc">
+				<c:if test="${c.cid==cc.cid }">
+					checked=true
+				</c:if>		
+			</c:forEach>	
+		 />${c.cname }
+	</c:forEach>
+	//=========================================
+ //===========================================
+ package cn.hnpi.jdbcweb.servlet;
+ 
+import java.io.IOException;
+import java.util.List;
+ 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import cn.hnpi.jdbcweb.biz.TypeBiz;
+import cn.hnpi.jdbcweb.biz.impl.TypeBizImpl;
+import cn.hnpi.jdbcweb.vo.TypeVo;
+@WebServlet("/ToBookAdd")
+public class ToBookAddServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				TypeBiz typeDao=new TypeBizImpl();
+				List<TypeVo> ls=typeDao.getBookType();
+				request.setAttribute("bookType", ls);
+				request.getRequestDispatcher("bookAdd.jsp").forward(request, response);
+	}
+ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+ 
+}
+
+ 在jsp页面获取vo对象，循环建立option标签
+ 	<select name="tid" id=typeSel>
+	<%
+	List<TypeVo> ls = (ArrayList<TypeVo>)request.getAttribute("bookType");
+	for (TypeVo typeVo : ls) {%>
+	<option value="<%=typeVo.getId()%>"><%=typeVo.getName() %></option>
+	<%
+	}
+	%>
+	</select>       
