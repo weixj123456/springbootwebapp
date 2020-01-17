@@ -1,0 +1,13 @@
+JSP select下拉标签 简单使用
+问题描述：项目过程中有一个需要用到下拉菜单用来存放学历信息 博士 硕士 本科 专科  第一次需要用到这个小的知识点，就简单总结一下
+直接放代码，后边是讲解：
+要用到<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  JSTL标签库需要提前引入 
+//代码部分：
+<li><label>学历</label>
+	<select name="educa" >
+			<option value="a" <c:if test="${educa=='a'}"></c:if>>博士</option>
+			<option value="b" <c:if test="${educa=='b'}"></c:if>>硕士</option>
+			<option value="c" <c:if test="${educa=='c'}"></c:if>>本科</option>
+			<option value="d" <c:if test="${educa=='d'}"></c:if>>专科</option>
+	</select>
+</li> 
