@@ -1,26 +1,13 @@
 package com.root.service;
 
-import java.util.Calendar;
-import java.util.Date;
-
-import org.quartz.CronExpression;
-import org.quartz.CronScheduleBuilder;
-import org.quartz.CronTrigger;
-import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
-import org.quartz.TriggerBuilder;
-import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.root.dao.CornTriggerQuartzMapper;
-import com.root.entity.CornTriggerQuartz;
-import com.root.tasks.WorkOrderJob;
 
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.ObjectUtil;
+import com.root.dao.CornTriggerQuartzMapper;
 
 
     @Service
